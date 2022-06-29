@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="body">
     <div class="container">
 
         <h1>UNIT 14. API Погода</h1>
@@ -21,20 +21,22 @@
         </h2>
 
         <div class="weather">
-            <select id="city">
+            <!-- <select id="city">
                 <option value="2643743">London</option>
                 <option value="625144">Minsk</option>
                 <option value="709930">Dnipro</option>
-                <option value="703448">Kyiv</option>
-                <select>
+                <option value="703448" selected>Kyiv</option>
+                <select> -->
 
-                    <div class="weather__out out">
-                        <p class="out_city">Kyiv</p>
-                        <p class="out_temp"></p>
-                        <p class="out_sky"></p>
-                        <p class="out_icon"></p>
-                        <p class="out_wind-speed"></p>
-                    </div>
+            <div class="weather__out out">
+                <div class="out__city"></div>
+                <div class="out__temp"></div>
+                <div class="out__sky"></div>
+                <div class="out__icon"></div>
+                <div class="out__wind"></div>
+                <div class="out__humidity"></div>
+                <div class="out__pressure"></div>
+            </div>
         </div>
     </div>
 
