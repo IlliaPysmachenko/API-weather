@@ -24,24 +24,25 @@ function showWeather(data) {
    document.querySelector('.out__city').innerHTML = data.name;
    document.querySelector('.out__temp').innerHTML = Math.round(data.main.temp) + '&deg;';
    document.querySelector('.out__sky').innerHTML = data.weather[0]['description'];
-   document.querySelector('.out__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`
+   document.querySelector('.out__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
    document.querySelector('.out__wind').innerHTML = `${data.wind['speed']} m/s ${windDirection(data.wind.deg)}`;
    document.querySelector('.out__humidity').innerHTML = `Humidity: ${data.main.humidity}%`;
    document.querySelector('.out__pressure').innerHTML = `${data.main.pressure}hPA`;
 }
 
 
-function windDirection(d) {
+function windDirection(dir) {
    const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'Nw'];
 
-   d += 22.5;
+   dir += 22.5;
 
-   if (d < 0)
-      d = 360 - Math.abs(d) % 360;
-   else
-      d = d % 360;
+   if (dir < 0) {
+      dir = 360 - Math.abs(dir) % 360;
+   } else {
+      dir = dir % 360;
+   }
 
-   let w = parseInt(d / 45);
+   let w = parseInt(dir / 45, 10);
    return `${directions[w]}`;
 }
 
